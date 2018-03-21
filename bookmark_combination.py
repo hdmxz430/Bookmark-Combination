@@ -24,7 +24,7 @@ def gather_bookmarks():
     return all_bookmarks
 
 
-def remove_duplicate(all_bookmarks):
+def remove_same_link(all_bookmarks):
     output_bookmarks = {}
     for bookmark in all_bookmarks:
         #print(bookmark)
@@ -72,7 +72,7 @@ def sort_func(url1, url2):
 
 if __name__ == '__main__':
     gathered_bookmarks = gather_bookmarks()
-    removed_duplicate_bookmarks = remove_duplicate(gathered_bookmarks)
+    removed_duplicate_bookmarks = remove_same_link(gathered_bookmarks)
     output_bookmarks = sort_bookmarks(removed_duplicate_bookmarks)
     for bookmark_list in output_bookmarks:
         print(bookmark_list)
