@@ -10,7 +10,17 @@ def gather_bookmarks():
     safari_bookmarks = ['https://mail.google.com/mail/u/0/#inbox', 'https://www.concur.com/', 'https://www.sap.com/index.html', 'https://www.google.com/news/']
     chrome_bookmarks = ['https://mail.google.com/', 'https://github.com/', 'https://stackoverflow.com/', 'https://www.sap.com']
     firefox_bookmarks = ['https://mail.google.com/', 'https://github.com/', 'http://www.sap.com/', 'https://news.google.com/news/']
-    all_bookmarks = safari_bookmarks + chrome_bookmarks + firefox_bookmarks
+    # all_bookmarks = safari_bookmarks + chrome_bookmarks + firefox_bookmarks
+    all_bookmarks = set()
+    for bookmarks in safari_bookmarks:
+        if bookmarks not in all_bookmarks:
+            all_bookmarks.add(bookmarks)
+    for bookmarks in chrome_bookmarks:
+        if bookmarks not in all_bookmarks:
+            all_bookmarks.add(bookmarks)
+    for bookmarks in firefox_bookmarks:
+        if bookmarks not in all_bookmarks:
+            all_bookmarks.add(bookmarks)
     return all_bookmarks
 
 
@@ -25,8 +35,7 @@ def remove_duplicate(all_bookmarks):
             continue
         name = result.geturl()
         if name in output_bookmarks:
-            if bookmark not in output_bookmarks[name]:
-                output_bookmarks[name].append(bookmark)
+            output_bookmarks[name].append(bookmark)
         else:
             output_bookmarks[name] = []
             output_bookmarks[name].append(bookmark)
