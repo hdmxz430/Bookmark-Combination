@@ -55,7 +55,7 @@ I divided the work into three parts.
 
 ## Part1
 
-Combine all the bookmarks into the same list
+Combine all the bookmarks into a set. The advantage of a set is that it removes duplicate links.
 
 ## Part2
 
@@ -104,3 +104,23 @@ For example,
 The url is 'https://mail.google.con/'
 
 The program would detect that and say this link is invalid, ignore this bookmark: https://mail.google.con/
+
+## Analysis
+
+Suppose we have n bookmarks in total.
+
+Time Complexity: 
+
+gather_bookmarks: O(n)
+
+remove_same_link: O(n)
+
+sort_bookmarks: O(n^2logn)
+
+Space Complexity:
+
+gather_bookmarks: O(n)
+
+remove_same_link: O(n)
+
+sort_bookmarks: O(n)
