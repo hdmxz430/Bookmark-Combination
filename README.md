@@ -51,13 +51,13 @@ as opening https://www.google.com/news/ will return an HTTP/2 302 with Location:
 
 [https://stackoverflow.com/]
 
-I divided the work into three parts.
+I divided the work into three steps.
 
-## Part1
+## Step 1
 
 Combine all the bookmarks into a set. The advantage of a set is that it removes duplicate links.
 
-## Part2
+## Step 2
 
 First, I constructed a dictionary to store the url that has the same real url values(address). The key is a string meaning the url's address
 the value is a list containing all the url that has the same address.
@@ -69,7 +69,7 @@ This is important because the same page may have different urls, using geturl ca
 Then, store the real url in the dictionary so that I can check the dictionary first every time I handle a new url and maps to 
 that dictionary.
 
-## Part3
+## Step 3
 
 Sort the list in the dictionary.
 
