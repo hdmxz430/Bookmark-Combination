@@ -3,6 +3,12 @@ Combine Bookmarks from different browsers
 
 The task is to combine the bookmarks from different browsers and the result.
 
+## Configuration 
+
+Python3
+
+Please install the package in the code if you encounter "ImportError: No module named..."
+
 The example input:
 
 Safari bookmarks:
